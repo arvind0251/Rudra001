@@ -103,11 +103,11 @@ async def lst(_, message):
         time.ctime(os.path.getctime(path))
         time2 = time.ctime(os.path.getmtime(path))
         time3 = time.ctime(os.path.getatime(path))
-        msg += f"**Location :** `{path}`\n"
-        msg += f"**Icon :** `{mode}`\n"
-        msg += f"**Size :** `{humanbytes(size)}`\n"
-        msg += f"**Last Modified Time:** `{time2}`\n"
-        msg += f"**Last Accessed Time:** `{time3}`"
+        msg += f"<b>Location : </b> `{path}`\n"
+        msg += f"<b>Icon : </b> `{mode}`\n"
+        msg += f"<b>Size : </b> `{humanbytes(size)}`\n"
+        msg += f"<b>Last Modified Time: </b> `{time2}`\n"
+        msg += f"<b>Last Accessed Time: </b> `{time3}`"
 
     if len(msg) > MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(msg)) as out_file:
