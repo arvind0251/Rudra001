@@ -28,7 +28,7 @@ async def _carbon(client, message):
         await message.reply_text("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴛᴇxᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴀᴋᴇ ᴀ ᴄᴀʀʙᴏɴ.")
         return
     if not (replied.text or replied.caption):
-        return await message.reply_text("**ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴛᴇxᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴀᴋᴇ ᴀ ᴄᴀʀʙᴏɴ.**")
+        return await message.reply_text("<b>ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴛᴇxᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴀᴋᴇ ᴀ ᴄᴀʀʙᴏɴ. </b>")
     text = await message.reply("Processing...")
     carbon = await make_carbon(replied.text or replied.caption)
     await text.edit("**ᴜᴘʟᴏᴀᴅɪɴɢ...**")
