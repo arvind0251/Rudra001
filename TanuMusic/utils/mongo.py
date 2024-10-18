@@ -7,40 +7,14 @@ from config import MONGO_DB_URI
 mongo = MongoCli(MONGO_DB_URI)
 db = mongo.TanuMusic
 
-coupledb = db.couple
+async def add_wlcm(chat_id: int):
+    return await wlcm.insert_one({"chat_id": chat_id})
+
+# Function to remove a welcome document
+async def rm_wlcm(chat_id: int):   
+    chat = await wlcm.find_one({"chat_id": chat_id})
+    if chat: 
+        return await wlcm.delete_one({"chat_id": chat_id})
 
 
 
-async def _get_lovers(cid: int):
-    lovers = await coupledb.find_one({"chat_id": cid})
-    if lovers:
-        lovers = lovers["couple"]
-    else:
-        lovers = {}
-    return lovers
-
-async def _get_image(cid: int):
-    lovers = await coupledb.find_one({"chat_id": cid})
-    if lovers:
-        lovers = lovers["img"]
-    else:
-        lovers = {}
-    return lovers
-
-async def get_couple(cid: int, date: str):
-    lovers = await _get_lovers(cid)
-    if date in lovers:
-        return lovers[date]
-    else:
-        return False
-
-
-async def save_couple(cid: int, date: str, couple: dict, img: str):
-    lovers = await _get_lovers(cid)
-    lovers[date] = couple
-    await coupledb.update_one(
-        {"chat_id": cid},
-        {"$set": {"couple": lovers, "img": img}},
-        upsert=True,
-    )
-  
