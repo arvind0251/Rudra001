@@ -8,7 +8,7 @@ from TanuMusic import LOGGER
 from pyrogram.types import Message
 from TanuMusic.misc import SUDOERS
 from TanuMusic import app
-from TanuMusic.database import *
+from TanuMusic.utils.database import *
 from config import LOGGER_ID
 
 LOGGER = getLogger(__name__)
