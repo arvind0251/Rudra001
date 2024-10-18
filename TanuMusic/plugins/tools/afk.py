@@ -5,7 +5,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from TanuMusic import app
 from TanuMusic.utils.formatters import get_readable_time
-from TanuMusic.utils.database.afkdb import add_afk, is_afk, remove_afk
+from TanuMusic.utils.database import add_afk, is_afk, remove_afk
 
 
 @app.on_message(filters.command(["afk", "brb"], prefixes=["/", "!"]))
