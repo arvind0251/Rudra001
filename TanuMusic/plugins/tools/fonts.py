@@ -1,7 +1,7 @@
 from pyrogram import  filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from TanuMusic.utils.font import Fonts
+from TanuMusic.utils.fonts import Fonts
 from TanuMusic import app
 
 @app.on_message(filters.command(["font", "fonts"]))
