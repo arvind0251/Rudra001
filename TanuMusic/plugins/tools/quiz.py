@@ -4,7 +4,7 @@ import asyncio
 from pyrogram import filters
 from pyrogram.enums import PollType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from ERAVIBES import app
+from TanuMusic import app
 
 # Track quiz loops and active polls per user
 quiz_loops = {}
