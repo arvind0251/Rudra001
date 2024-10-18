@@ -62,7 +62,7 @@ async def quiz_info(client, message):
 
     # Send the informational message
     await message.reply_text(
-        "**Welcome to the Quiz Bot!**\n\n"
+        "<b>Welcome to the Quiz Bot! </b>\n\n"
         "Here is how it works:\n"
         "1. Use `/quizon` to start a quiz loop. After you start, you will be asked to choose a time interval for the quiz.\n"
         "2. The available intervals are:\n"
@@ -93,12 +93,12 @@ async def quiz_on(client, message):
 
     # Send buttons with a description
     await message.reply_text(
-        "**Choose how often you want the quiz to run:**\n\n"
+        "<b>Choose how often you want the quiz to run. </b>\n\n"
         "- 30s: Quiz every 30 seconds\n"
         "- 1min: Quiz every 1 minute\n"
         "- 5min: Quiz every 5 minutes\n"
         "- 10min: Quiz every 10 minutes\n\n"
-        "**Use** `/quizoff` **to stop the quiz loop at any time.**",
+        "<b>Use `/quizoff` to stop the quiz loop at any time. </b>",
         reply_markup=keyboard
     )
 
