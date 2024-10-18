@@ -46,33 +46,33 @@ async def lst(_, message):
             if not isdir(thepathoflight):
                 size = os.stat(thepathoflight).st_size
                 if contents.endswith((".mp3", ".flac", ".wav", ".m4a")):
-                    files += "🎵 " + f"`{contents}`\n"
+                    files += "🎵 " + f"{contents}\n"
                 if contents.endswith((".opus")):
-                    files += "🎙 " + f"`{contents}`\n"
+                    files += "🎙 " + f"{contents}\n"
                 elif contents.endswith(
                     (".mkv", ".mp4", ".webm", ".avi", ".mov", ".flv")
                 ):
-                    files += "🎞 " + f"`{contents}`\n"
+                    files += "🎞 " + f"{contents}\n"
                 elif contents.endswith(
                     (".zip", ".tar", ".tar.gz", ".rar", ".7z", ".xz")
                 ):
-                    files += "🗜 " + f"`{contents}`\n"
+                    files += "🗜 " + f"{contents}\n"
                 elif contents.endswith(
                     (".jpg", ".jpeg", ".png", ".gif", ".bmp", ".ico", ". webp")
                 ):
-                    files += "🖼 " + f"`{contents}`\n"
+                    files += "🖼 " + f"{contents}\n"
                 elif contents.endswith((".exe", ".deb")):
-                    files += "⚙️ " + f"`{contents}`\n"
+                    files += "⚙️ " + f"{contents}\n"
                 elif contents.endswith((".iso", ".img")):
-                    files += "💿 " + f"`{contents}`\n"
-                elif contents.endswith((".apk", ".xapk")):
-                    files += "📱 " + f"`{contents}`\n"
+                    files += "💿 " + f"{contents}\n"
+                elif contents.endswith((".apk", ".apk")):
+                    files += "📱 " + f"{contents}\n"
                 elif contents.endswith((".py")):
-                    files += "🐍 " + f"`{contents}`\n"
+                    files += "🐍 " + f"{contents}\n"
                 else:
-                    files += "📄 " + f"`{contents}`\n"
+                    files += "📄 " + f"{contents}\n"
             else:
-                folders += f"📁 `{contents}`\n"
+                folders += f"📁 {contents}\n"
         if files or folders:
             msg = msg + folders + files
         else:
