@@ -100,7 +100,7 @@ async def nxt(c, m):
         ]
         await m.answer()
         await m.message.edit_reply_markup(InlineKeyboardMarkup(buttons))
-    elif m.data == "nxt+0"
+    elif m.data == "nxt+0":
         await style_buttons(c, m, cb=True)
 
 @app.on_callback_query(filters.regex("^style"))
