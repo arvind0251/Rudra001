@@ -1,6 +1,6 @@
 </h2>
 <p align="center">
-  <img src="https://graph.org/file/ff3ad786da825b5205691.jpg">
+  <img src="https://envs.sh/pu3.jpg">
 </p>
 
 <h2 align="center">
