@@ -1,8 +1,9 @@
 from pyrogram import  filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from TanuMusic.utils.fonts import Fonts
-from TanuMusic import app
+from AnonXMusic.utils.roy_font import Fonts
+from AnonXMusic import app
+
 
 @app.on_message(filters.command(["font", "fonts"]))
 async def style_buttons(c, m, cb=False):
@@ -43,7 +44,7 @@ async def style_buttons(c, m, cb=False):
             InlineKeyboardButton("H̆̈ă̈p̆̈p̆̈y̆̈", callback_data="style+happy"),
             InlineKeyboardButton("S̑̈ȃ̈d̑̈", callback_data="style+sad"),
         ],
-        [InlineKeyboardButton ("ᴄʟᴏsᴇ",callback_data="close_reply"),InlineKeyboardButton ("ɴᴇxᴛ ➻", callback_data="nxt")],
+        [InlineKeyboardButton ("ᴄʟᴏsᴇ",callback_data="close_reply"),InlineKeyboardButton ("ɴᴇxᴛ ➤", callback_data="nxt")],
     ]
     if not cb:
         await m.reply_text(
@@ -52,7 +53,6 @@ async def style_buttons(c, m, cb=False):
     else:
         await m.answer()
         await m.message.edit_reply_markup(InlineKeyboardMarkup(buttons))
-
 
 @app.on_callback_query(filters.regex("^nxt"))
 async def nxt(c, m):
@@ -96,13 +96,12 @@ async def nxt(c, m):
                 InlineKeyboardButton("S̶t̶r̶i̶k̶e̶", callback_data="style+strike"),
                 InlineKeyboardButton("F༙r༙o༙z༙e༙n༙", callback_data="style+frozen"),
             ],
-            [InlineKeyboardButton ("ᴄʟᴏsᴇ",callback_data="close_reply"),InlineKeyboardButton ("ʙᴀᴄᴋ", callback_data="nxt+0")],
+            [InlineKeyboardButton ("ᴄʟᴏsᴇ", callback_data="close_reply"), InlineKeyboardButton ("ʙᴀᴄᴋ", callback_data="nxt+0")],
         ]
         await m.answer()
         await m.message.edit_reply_markup(InlineKeyboardMarkup(buttons))
-    else:
+    elif m.data == "nxt+0"
         await style_buttons(c, m, cb=True)
-
 
 @app.on_callback_query(filters.regex("^style"))
 async def style(c, m):
@@ -185,10 +184,11 @@ async def style(c, m):
     if style == "strike":
         cls = Fonts.strike
     if style == "frozen":
-        cls = Fonts.frozen
-    #text = m.text.split(' ',1)[1]    
+        cls = Fonts.frozen  
     new_text = cls(m.message.reply_to_message.text.split(" ",1)[1])
     try:
         await m.message.edit_text(new_text, reply_markup=m.message.reply_markup)
     except:
         pass
+
+
