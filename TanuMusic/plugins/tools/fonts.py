@@ -1,14 +1,14 @@
 from pyrogram import  filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from TanuMusic.utils.fonts import Fonts
-from TanuMusic import app
-
+from AnonXMusic.utils.roy_font import Fonts
+from AnonXMusic import app
 
 @app.on_message(filters.command(["font", "fonts"]))
 async def style_buttons(c, m, cb=False):
-    text = m.text.split(' ',1)[1]
-    buttons = [
+    if not cb:
+        text = m.text.split(' ',1)[1]
+        buttons = [
         [
             InlineKeyboardButton("𝚃𝚢𝚙𝚎𝚠𝚛𝚒𝚝𝚎𝚛", callback_data="style+typewriter"),
             InlineKeyboardButton("𝕆𝕦𝕥𝕝𝕚𝕟𝕖", callback_data="style+outline"),
@@ -47,12 +47,10 @@ async def style_buttons(c, m, cb=False):
         [InlineKeyboardButton ("ᴄʟᴏsᴇ",callback_data="close_reply"),InlineKeyboardButton ("ɴᴇxᴛ ➤", callback_data="nxt")],
     ]
     if not cb:
-        await m.reply_text(
-            f"`{text}`", reply_markup=InlineKeyboardMarkup(buttons), quote=True
-        )
+        await m.reply_text(f"`{text}`", reply_markup=InlineKeyboardMarkup(buttons), quote=True)
     else:
         await m.answer()
-        await m.message.edit_reply_markup(InlineKeyboardMarkup(buttons))
+        await m.message.edit_reply_markup(InlineKeyboardMarkup(buttons))]
 
 @app.on_callback_query(filters.regex("^nxt"))
 async def nxt(c, m):
@@ -100,7 +98,7 @@ async def nxt(c, m):
         ]
         await m.answer()
         await m.message.edit_reply_markup(InlineKeyboardMarkup(buttons))
-    elif m.data == "nxt+0":
+    elif m.data == "nxt+0"
         await style_buttons(c, m, cb=True)
 
 @app.on_callback_query(filters.regex("^style"))
