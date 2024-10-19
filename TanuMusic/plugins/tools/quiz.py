@@ -148,7 +148,7 @@ async def stop_quiz(client, message):
         await message.reply_text("Nᴏ ǫᴜɪᴢ ʟᴏᴏᴘ ɪs ʀᴜɴɴɪɴɢ.")
     else:
         quiz_loops.pop(user_id)  # Stop the loop
-        await message.reply_text("⛔ Qᴜɪᴢ ʟᴏᴏᴘ sᴛᴏᴘᴘᴇᴅ...!!")
+        await message.reply_text("❌️ Qᴜɪᴢ ʟᴏᴏᴘ sᴛᴏᴘᴘᴇᴅ...!!")
 
         # Delete the active poll if there's one
         if user_id in active_polls:
