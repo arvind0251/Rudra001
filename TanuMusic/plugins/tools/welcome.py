@@ -121,14 +121,14 @@ async def greet_group(_, member: ChatMemberUpdated):
             photo=welcomeimg,
             caption= f"""
 ㅤㅤㅤ◦•●◉✿ ᴡᴇʟᴄᴏᴍᴇ ʙᴀʙʏ ✿◉●•◦
-▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▰
+▰▱▱▱▱▱▱▱▱▱▱▱▱▱▰
 
 ● ɴᴀᴍᴇ ➥  {user.mention}
 ● ᴜsᴇʀɴᴀᴍᴇ ➥  @{user.username}
 ● ᴜsᴇʀ ɪᴅ ➥  {user.id}
 
 ❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ ˹ ᴛᴀɴᴜ ꭙ ᴍᴜsɪᴄ™ ♡゙
-▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▰
+▰▱▱▱▱▱▱▱▱▱▱▱▱▱▰
 """,
 reply_markup=InlineKeyboardMarkup(
 [
