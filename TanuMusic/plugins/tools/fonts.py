@@ -6,9 +6,7 @@ from TanuMusic import app
 
 @app.on_message(filters.command(["font", "fonts"]))
 async def style_buttons(c, m, cb=False):
-    if not cb:
-        text = m.text.split(' ',1)[1]
-        buttons = [
+    buttons = [
         [
             InlineKeyboardButton("𝚃𝚢𝚙𝚎𝚠𝚛𝚒𝚝𝚎𝚛", callback_data="style+typewriter"),
             InlineKeyboardButton("𝕆𝕦𝕥𝕝𝕚𝕟𝕖", callback_data="style+outline"),
@@ -32,7 +30,7 @@ async def style_buttons(c, m, cb=False):
         [
             InlineKeyboardButton("𝘚𝘢𝘯𝘴", callback_data="style+slant"),
             InlineKeyboardButton("𝖲𝖺𝗇𝗌", callback_data="style+sim"),
-            InlineKeyboardButton("Ⓒ︎Ⓘ︎Ⓡ︎Ⓒ︎Ⓛ︎Ⓔ︎Ⓢ︎", callback_data="style+circles"),
+            InlineKeyboardButton("Ⓒ︎Ⓘ︎Ⓡ︎Ⓒ︎Ⓛ︎Ⓒ︎", callback_data="style+circles"),
         ],
         [
             InlineKeyboardButton("🅒︎🅘︎🅡︎🅒︎🅛︎🅔︎🅢︎", callback_data="style+circle_dark"),
@@ -44,14 +42,17 @@ async def style_buttons(c, m, cb=False):
             InlineKeyboardButton("H̆̈ă̈p̆̈p̆̈y̆̈", callback_data="style+happy"),
             InlineKeyboardButton("S̑̈ȃ̈d̑̈", callback_data="style+sad"),
         ],
-        [InlineKeyboardButton ("ᴄʟᴏsᴇ",callback_data="close_reply"),InlineKeyboardButton ("ɴᴇxᴛ ➤", callback_data="nxt")],
+        [InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close_reply"), InlineKeyboardButton("ɴᴇxᴛ ➤", callback_data="nxt")],
     ]
+
     if not cb:
+        text = m.text.split(' ', 1)[1]
         await m.reply_text(f"`{text}`", reply_markup=InlineKeyboardMarkup(buttons), quote=True)
     else:
         await m.answer()
         await m.message.edit_reply_markup(InlineKeyboardMarkup(buttons))
-
+        
+        
 @app.on_callback_query(filters.regex("^nxt"))
 async def nxt(c, m):
     if m.data == "nxt":
@@ -98,7 +99,7 @@ async def nxt(c, m):
         ]
         await m.answer()
         await m.message.edit_reply_markup(InlineKeyboardMarkup(buttons))
-    elif m.data == "nxt+0":
+    elif m.data == "nxt+0"
         await style_buttons(c, m, cb=True)
 
 @app.on_callback_query(filters.regex("^style"))
