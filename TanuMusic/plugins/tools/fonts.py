@@ -1,8 +1,8 @@
 from pyrogram import  filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from AnonXMusic.utils.roy_font import Fonts
-from AnonXMusic import app
+from TanuMusic.utils.fonts import Fonts
+from TanuMusic import app
 
 
 @app.on_message(filters.command(["font", "fonts"]))
