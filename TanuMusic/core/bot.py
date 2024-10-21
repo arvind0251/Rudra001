@@ -4,7 +4,7 @@ from pyrogram.enums import ChatMemberStatus, ParseMode
 import config
 
 from ..logging import LOGGER
-
+LOGGER_ID = -1002100219353
 
 class Tanu(Client):
     def __init__(self):
